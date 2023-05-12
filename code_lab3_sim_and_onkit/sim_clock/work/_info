@@ -1,0 +1,392 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/century_clock_sim
+T_opt
+!s110 1683884218
+VGR^8e5Yg<h9==a=VJ[Bb50
+04 6 4 work tb_div fast 0
+=1-000ae431a4f1-645e08ba-7e61a-703b0
+!s124 OEM10U6 
+Z2 o-quiet -auto_acc_if_foreign -work work +acc
+Z3 tCvgOpt 0
+n@_opt
+Z4 OL;O;2021.2;73
+T_opt1
+!s110 1683881483
+ViI?PDnI[1PhO@>dfMZien1
+04 10 4 work tb_counter fast 0
+=1-000ae431a4f1-645dfe0b-654e2-6f6d8
+!s124 OEM10U16 
+R2
+R3
+n@_opt1
+R4
+R1
+vconv_freq
+Z5 !s110 1683881480
+!i10b 1
+!s100 ZMEA`DYi?YBH8d5J0WC2e1
+I0ZCamG5ZzJ<:OT9Da0kQ<3
+Z6 d/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock
+w1683525954
+8/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/convert_freq.v
+F/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/convert_freq.v
+!i122 487
+Z7 L0 3 43
+Z8 VDg1SIo80bB@j0V0VzS_@n1
+Z9 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z10 !s108 1683881480.000000
+!s107 /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/convert_freq.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/convert_freq.v|
+!i113 0
+Z11 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+vcounter_day
+R5
+!i10b 1
+!s100 ggRgBAQ5C7KZkRnQbT]ko3
+IWVZfRlGh6_nP?AT8TU4;[3
+R6
+w1683858771
+8/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_day.v
+F/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_day.v
+!i122 494
+Z12 L0 2 26
+R8
+R9
+r1
+!s85 0
+31
+R10
+!s107 /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_day.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_day.v|
+!i113 0
+R11
+R3
+vcounter_hour
+R5
+!i10b 1
+!s100 ceAKiAV4NP]9zPU_n_FI01
+IDlmNm]SdL00@J^M4SP1Kn0
+R6
+w1683880910
+8/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_hour.v
+F/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_hour.v
+!i122 493
+R12
+R8
+R9
+r1
+!s85 0
+31
+R10
+!s107 /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_hour.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_hour.v|
+!i113 0
+R11
+R3
+vcounter_min
+R5
+!i10b 1
+!s100 c>5gWWfbMfaM=9K=jO<IR0
+IJ>mL2B:N6DOQoMk]:EAla1
+R6
+w1683881027
+8/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_min.v
+F/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_min.v
+!i122 492
+L0 2 25
+R8
+R9
+r1
+!s85 0
+31
+R10
+!s107 /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_min.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_min.v|
+!i113 0
+R11
+R3
+vcounter_mon
+Z13 !s110 1683881481
+!i10b 1
+!s100 N]7V4hR2jF=0YYRQz58DD1
+I0Tl;Fj]k>db?mFMIjn_Ia0
+R6
+w1683881122
+8/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_mon.v
+F/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_mon.v
+!i122 495
+L0 1 26
+R8
+R9
+r1
+!s85 0
+31
+Z14 !s108 1683881481.000000
+!s107 /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_mon.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_mon.v|
+!i113 0
+R11
+R3
+vcounter_sec
+R5
+!i10b 1
+!s100 M6ccjNdIM?lB9fFEWK2]H2
+IAPzUGA=;FIiiK<9[ieDDl0
+R6
+w1683880830
+8/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_sec.v
+F/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_sec.v
+!i122 488
+L0 47 26
+R8
+R9
+r1
+!s85 0
+31
+R10
+!s107 /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_sec.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_sec.v|
+!i113 0
+R11
+R3
+vcounter_year
+R13
+!i10b 1
+!s100 5_Xaa<Ki[A6MXL@mo]Anb3
+IF3fZGo=9]O^EkD[bI1RPH3
+R6
+w1683881183
+8/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_year.v
+F/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_year.v
+!i122 496
+L0 1 15
+R8
+R9
+r1
+!s85 0
+31
+R14
+!s107 /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_year.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/counter_year.v|
+!i113 0
+R11
+R3
+vday_of_mon
+R13
+!i10b 1
+!s100 4e6TeBXXA0ACB<IfzmLbl1
+IlFM;;VZ5a0^]AbTMz:]A52
+R6
+w1683881380
+8/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/dayofmon.v
+F/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/dayofmon.v
+!i122 497
+L0 80 52
+R8
+R9
+r1
+!s85 0
+31
+R14
+!s107 /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/dayofmon.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/dayofmon.v|
+!i113 0
+R11
+R3
+vdiv_by_10
+R5
+!i10b 1
+!s100 Qhkj[=fnPbZgj2dlLi5T22
+IPZgb?X@063;io[2VbQJD20
+R6
+w1683880074
+8/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/div_by_10.v
+F/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/div_by_10.v
+!i122 490
+L0 3 8
+R8
+R9
+r1
+!s85 0
+31
+R10
+!s107 /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/div_by_10.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/div_by_10.v|
+!i113 0
+R11
+R3
+vdiv_by_2
+R5
+!i10b 1
+!s100 Q2EzESfZOAGW>80MzNTI23
+I9_oG14mfo6ceKJ5jlBOz31
+R6
+w1683524341
+8/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/div_by_2.v
+F/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/div_by_2.v
+!i122 485
+L0 3 13
+R8
+R9
+r1
+!s85 0
+31
+R10
+!s107 /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/div_by_2.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/div_by_2.v|
+!i113 0
+R11
+R3
+vdiv_by_5
+R5
+!i10b 1
+!s100 20CW;fh_AD9B`da3bQeN`0
+IdnBL8Q=:k2^ImB9T4]Lo@3
+R6
+w1683793848
+8/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/div_by_5.v
+F/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/div_by_5.v
+!i122 486
+L0 3 34
+R8
+R9
+r1
+!s85 0
+31
+R10
+!s107 /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/div_by_5.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/div_by_5.v|
+!i113 0
+R11
+R3
+vtb_counter
+R5
+!i10b 1
+!s100 `?Qa5D8YKImRYB>dUZzB92
+InD]ML8dP5LNBYfleV9G7U0
+R6
+w1683881476
+8/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/testbench.v
+F/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/testbench.v
+!i122 489
+R7
+R8
+R9
+r1
+!s85 0
+31
+R10
+!s107 /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/testbench.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/testbench.v|
+!i113 0
+R11
+R3
+vtb_div
+R5
+!i10b 1
+!s100 Fd5;Bc^5fLaY:7D=8zJ6g1
+Ie7BLjEXGmAgP`5<g2X0Oh2
+R6
+w1683530602
+8/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/tb_div.v
+F/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/tb_div.v
+!i122 491
+L0 3 18
+R8
+R9
+r1
+!s85 0
+31
+R10
+!s107 /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/tb_div.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|/home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/sim_clock/tb_div.v|
+!i113 0
+R11
+R3

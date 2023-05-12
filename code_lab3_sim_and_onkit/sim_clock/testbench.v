@@ -1,0 +1,45 @@
+`timescale 10ns/1ps
+
+module tb_counter ();
+	reg clk;
+	reg rst_n;
+	reg inc_sec;
+	wire inc_min;
+	wire inc_hour;
+	wire inc_day;
+	wire inc_mon;
+	wire inc_year;
+
+	wire [5:0] out_sec;
+	wire [5:0] out_min;
+	wire [5:0] out_hour;
+	wire [5:0] out_day;	
+	wire [5:0] out_mon;
+	wire [5:0] out_year;
+	wire clk_1Hz;
+	
+	wire [5:0] rst_numb_sec, rst_numb_min, rst_numb_hour, rst_numb_day, rst_numb_mon;
+	assign rst_numb_sec = 59;
+	assign rst_numb_min = 59;
+	assign rst_numb_hour = 23;
+	assign rst_numb_mon = 12;
+
+	conv_freq conv_freq(.clk_in(clk), .clk_out(clk_1Hz));
+	counter_sec cnt_sec(.clk_1Hz(clk_1Hz), .rst_n(rst_n), .inc_sec(inc_sec), .rst_numb_sec(rst_numb_sec), .inc_min(inc_min), .out_sec(out_sec));
+	counter_min cnt_min(.clk_1Hz(clk_1Hz), .rst_n(rst_n), .inc_min(inc_min) , .rst_numb_min(rst_numb_min), .inc_hour(inc_hour), .out_min(out_min));
+	counter_hour cnt_hour(.clk_1Hz(clk_1Hz), .rst_n(rst_n), .inc_hour(inc_hour), .rst_numb_hour(rst_numb_hour), .inc_day(inc_day), .out_hour(out_hour));
+	day_of_mon dom(.rst_n(rst_n), .in_mon(out_mon), .in_year(out_year), .rst_day(rst_numb_day));
+	counter_day cnt_day(.clk_1Hz(clk_1Hz), .rst_n  (rst_n), .inc_day(inc_day), .rst_numb_day(rst_numb_day), .inc_mon(inc_mon), .out_day(out_day));
+	counter_mon cnt_mon(.clk_1Hz(clk_1Hz), .rst_n  (rst_n), .inc_mon(inc_mon), .rst_numb_mon(rst_numb_mon), .inc_year(inc_year), .out_mon(out_mon));
+	counter_year cnt_year(.clk_1Hz(clk_1Hz), .rst_n  (rst_n), .inc_year(inc_year), .out_year(out_year));	
+	
+	initial 
+	begin
+		clk = 1;
+		rst_n = 0;
+		inc_sec = 1;
+	end
+	
+	always #1 {clk,rst_n}= {~clk,1'b1};
+	
+endmodule

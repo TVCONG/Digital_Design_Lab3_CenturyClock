@@ -1,0 +1,646 @@
+|centery_clock
+clk => clk.IN1
+rst_n => rst_n.IN7
+swap => swap_sec_day.OUTPUTSELECT
+swap => swap_sec_day.OUTPUTSELECT
+swap => swap_sec_day.OUTPUTSELECT
+swap => swap_sec_day.OUTPUTSELECT
+swap => swap_sec_day.OUTPUTSELECT
+swap => swap_sec_day.OUTPUTSELECT
+swap => swap_min_mon.OUTPUTSELECT
+swap => swap_min_mon.OUTPUTSELECT
+swap => swap_min_mon.OUTPUTSELECT
+swap => swap_min_mon.OUTPUTSELECT
+swap => swap_min_mon.OUTPUTSELECT
+swap => swap_min_mon.OUTPUTSELECT
+swap => swap_hour_year.OUTPUTSELECT
+swap => swap_hour_year.OUTPUTSELECT
+swap => swap_hour_year.OUTPUTSELECT
+swap => swap_hour_year.OUTPUTSELECT
+swap => swap_hour_year.OUTPUTSELECT
+swap => swap_hour_year.OUTPUTSELECT
+abcdefg_sec_unit[0] <= led_unit:led_sec_unit.abcdefg
+abcdefg_sec_unit[1] <= led_unit:led_sec_unit.abcdefg
+abcdefg_sec_unit[2] <= led_unit:led_sec_unit.abcdefg
+abcdefg_sec_unit[3] <= led_unit:led_sec_unit.abcdefg
+abcdefg_sec_unit[4] <= led_unit:led_sec_unit.abcdefg
+abcdefg_sec_unit[5] <= led_unit:led_sec_unit.abcdefg
+abcdefg_sec_unit[6] <= led_unit:led_sec_unit.abcdefg
+abcdefg_sec_ten[0] <= led_ten:led_sec_ten.abcdefg
+abcdefg_sec_ten[1] <= led_ten:led_sec_ten.abcdefg
+abcdefg_sec_ten[2] <= led_ten:led_sec_ten.abcdefg
+abcdefg_sec_ten[3] <= led_ten:led_sec_ten.abcdefg
+abcdefg_sec_ten[4] <= led_ten:led_sec_ten.abcdefg
+abcdefg_sec_ten[5] <= led_ten:led_sec_ten.abcdefg
+abcdefg_sec_ten[6] <= led_ten:led_sec_ten.abcdefg
+abcdefg_min_unit[0] <= led_unit:led_min_unit.abcdefg
+abcdefg_min_unit[1] <= led_unit:led_min_unit.abcdefg
+abcdefg_min_unit[2] <= led_unit:led_min_unit.abcdefg
+abcdefg_min_unit[3] <= led_unit:led_min_unit.abcdefg
+abcdefg_min_unit[4] <= led_unit:led_min_unit.abcdefg
+abcdefg_min_unit[5] <= led_unit:led_min_unit.abcdefg
+abcdefg_min_unit[6] <= led_unit:led_min_unit.abcdefg
+abcdefg_min_ten[0] <= led_ten:led_min_ten.abcdefg
+abcdefg_min_ten[1] <= led_ten:led_min_ten.abcdefg
+abcdefg_min_ten[2] <= led_ten:led_min_ten.abcdefg
+abcdefg_min_ten[3] <= led_ten:led_min_ten.abcdefg
+abcdefg_min_ten[4] <= led_ten:led_min_ten.abcdefg
+abcdefg_min_ten[5] <= led_ten:led_min_ten.abcdefg
+abcdefg_min_ten[6] <= led_ten:led_min_ten.abcdefg
+abcdefg_hour_unit[0] <= led_unit:led_hour_unit.abcdefg
+abcdefg_hour_unit[1] <= led_unit:led_hour_unit.abcdefg
+abcdefg_hour_unit[2] <= led_unit:led_hour_unit.abcdefg
+abcdefg_hour_unit[3] <= led_unit:led_hour_unit.abcdefg
+abcdefg_hour_unit[4] <= led_unit:led_hour_unit.abcdefg
+abcdefg_hour_unit[5] <= led_unit:led_hour_unit.abcdefg
+abcdefg_hour_unit[6] <= led_unit:led_hour_unit.abcdefg
+abcdefg_hour_ten[0] <= led_ten:led_hour_ten.abcdefg
+abcdefg_hour_ten[1] <= led_ten:led_hour_ten.abcdefg
+abcdefg_hour_ten[2] <= led_ten:led_hour_ten.abcdefg
+abcdefg_hour_ten[3] <= led_ten:led_hour_ten.abcdefg
+abcdefg_hour_ten[4] <= led_ten:led_hour_ten.abcdefg
+abcdefg_hour_ten[5] <= led_ten:led_hour_ten.abcdefg
+abcdefg_hour_ten[6] <= led_ten:led_hour_ten.abcdefg
+
+
+|centery_clock|convert_freq:conv_freq
+clk_in => clk_in.IN1
+clk_out <= div_by_10:block_8.clk_out
+
+
+|centery_clock|convert_freq:conv_freq|div_by_5:block_1
+clk_in => q0.CLK
+clk_in => q1.CLK
+clk_in => q2.CLK
+clk_in => q3.CLK
+clk_out <= clk_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|convert_freq:conv_freq|div_by_10:block_2
+clk_in => clk_in.IN1
+clk_out <= div_by_2:div5.clk_out
+
+
+|centery_clock|convert_freq:conv_freq|div_by_10:block_2|div_by_5:div2
+clk_in => q0.CLK
+clk_in => q1.CLK
+clk_in => q2.CLK
+clk_in => q3.CLK
+clk_out <= clk_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|convert_freq:conv_freq|div_by_10:block_2|div_by_2:div5
+clk_in => clk_out~reg0.CLK
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|convert_freq:conv_freq|div_by_10:block_3
+clk_in => clk_in.IN1
+clk_out <= div_by_2:div5.clk_out
+
+
+|centery_clock|convert_freq:conv_freq|div_by_10:block_3|div_by_5:div2
+clk_in => q0.CLK
+clk_in => q1.CLK
+clk_in => q2.CLK
+clk_in => q3.CLK
+clk_out <= clk_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|convert_freq:conv_freq|div_by_10:block_3|div_by_2:div5
+clk_in => clk_out~reg0.CLK
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|convert_freq:conv_freq|div_by_10:block_4
+clk_in => clk_in.IN1
+clk_out <= div_by_2:div5.clk_out
+
+
+|centery_clock|convert_freq:conv_freq|div_by_10:block_4|div_by_5:div2
+clk_in => q0.CLK
+clk_in => q1.CLK
+clk_in => q2.CLK
+clk_in => q3.CLK
+clk_out <= clk_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|convert_freq:conv_freq|div_by_10:block_4|div_by_2:div5
+clk_in => clk_out~reg0.CLK
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|convert_freq:conv_freq|div_by_10:block_5
+clk_in => clk_in.IN1
+clk_out <= div_by_2:div5.clk_out
+
+
+|centery_clock|convert_freq:conv_freq|div_by_10:block_5|div_by_5:div2
+clk_in => q0.CLK
+clk_in => q1.CLK
+clk_in => q2.CLK
+clk_in => q3.CLK
+clk_out <= clk_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|convert_freq:conv_freq|div_by_10:block_5|div_by_2:div5
+clk_in => clk_out~reg0.CLK
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|convert_freq:conv_freq|div_by_10:block_6
+clk_in => clk_in.IN1
+clk_out <= div_by_2:div5.clk_out
+
+
+|centery_clock|convert_freq:conv_freq|div_by_10:block_6|div_by_5:div2
+clk_in => q0.CLK
+clk_in => q1.CLK
+clk_in => q2.CLK
+clk_in => q3.CLK
+clk_out <= clk_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|convert_freq:conv_freq|div_by_10:block_6|div_by_2:div5
+clk_in => clk_out~reg0.CLK
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|convert_freq:conv_freq|div_by_10:block_7
+clk_in => clk_in.IN1
+clk_out <= div_by_2:div5.clk_out
+
+
+|centery_clock|convert_freq:conv_freq|div_by_10:block_7|div_by_5:div2
+clk_in => q0.CLK
+clk_in => q1.CLK
+clk_in => q2.CLK
+clk_in => q3.CLK
+clk_out <= clk_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|convert_freq:conv_freq|div_by_10:block_7|div_by_2:div5
+clk_in => clk_out~reg0.CLK
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|convert_freq:conv_freq|div_by_10:block_8
+clk_in => clk_in.IN1
+clk_out <= div_by_2:div5.clk_out
+
+
+|centery_clock|convert_freq:conv_freq|div_by_10:block_8|div_by_5:div2
+clk_in => q0.CLK
+clk_in => q1.CLK
+clk_in => q2.CLK
+clk_in => q3.CLK
+clk_out <= clk_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|convert_freq:conv_freq|div_by_10:block_8|div_by_2:div5
+clk_in => clk_out~reg0.CLK
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|counter_sec:cnt_sec
+clk_1Hz => inc_min~reg0.CLK
+clk_1Hz => out_sec[0]~reg0.CLK
+clk_1Hz => out_sec[1]~reg0.CLK
+clk_1Hz => out_sec[2]~reg0.CLK
+clk_1Hz => out_sec[3]~reg0.CLK
+clk_1Hz => out_sec[4]~reg0.CLK
+clk_1Hz => out_sec[5]~reg0.CLK
+rst_n => inc_min~reg0.ACLR
+rst_n => out_sec[0]~reg0.ACLR
+rst_n => out_sec[1]~reg0.ACLR
+rst_n => out_sec[2]~reg0.ACLR
+rst_n => out_sec[3]~reg0.ACLR
+rst_n => out_sec[4]~reg0.ACLR
+rst_n => out_sec[5]~reg0.ACLR
+inc_sec => out_sec.OUTPUTSELECT
+inc_sec => out_sec.OUTPUTSELECT
+inc_sec => out_sec.OUTPUTSELECT
+inc_sec => out_sec.OUTPUTSELECT
+inc_sec => out_sec.OUTPUTSELECT
+inc_sec => out_sec.OUTPUTSELECT
+inc_sec => inc_min.OUTPUTSELECT
+rst_numb_sec[0] => Equal0.IN5
+rst_numb_sec[1] => Equal0.IN4
+rst_numb_sec[2] => Equal0.IN3
+rst_numb_sec[3] => Equal0.IN2
+rst_numb_sec[4] => Equal0.IN1
+rst_numb_sec[5] => Equal0.IN0
+inc_min <= inc_min~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_sec[0] <= out_sec[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_sec[1] <= out_sec[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_sec[2] <= out_sec[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_sec[3] <= out_sec[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_sec[4] <= out_sec[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_sec[5] <= out_sec[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|counter_min:cnt_min
+clk_1Hz => ~NO_FANOUT~
+rst_n => inc_hour~reg0.ACLR
+rst_n => out_min[0]~reg0.ACLR
+rst_n => out_min[1]~reg0.ACLR
+rst_n => out_min[2]~reg0.ACLR
+rst_n => out_min[3]~reg0.ACLR
+rst_n => out_min[4]~reg0.ACLR
+rst_n => out_min[5]~reg0.ACLR
+inc_min => inc_hour~reg0.CLK
+inc_min => out_min[0]~reg0.CLK
+inc_min => out_min[1]~reg0.CLK
+inc_min => out_min[2]~reg0.CLK
+inc_min => out_min[3]~reg0.CLK
+inc_min => out_min[4]~reg0.CLK
+inc_min => out_min[5]~reg0.CLK
+rst_numb_min[0] => Equal0.IN5
+rst_numb_min[1] => Equal0.IN4
+rst_numb_min[2] => Equal0.IN3
+rst_numb_min[3] => Equal0.IN2
+rst_numb_min[4] => Equal0.IN1
+rst_numb_min[5] => Equal0.IN0
+inc_hour <= inc_hour~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_min[0] <= out_min[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_min[1] <= out_min[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_min[2] <= out_min[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_min[3] <= out_min[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_min[4] <= out_min[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_min[5] <= out_min[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|counter_hour:cnt_hour
+clk_1Hz => ~NO_FANOUT~
+rst_n => inc_day~reg0.ACLR
+rst_n => out_hour[0]~reg0.ACLR
+rst_n => out_hour[1]~reg0.ACLR
+rst_n => out_hour[2]~reg0.ACLR
+rst_n => out_hour[3]~reg0.ACLR
+rst_n => out_hour[4]~reg0.ACLR
+rst_n => out_hour[5]~reg0.ACLR
+inc_hour => inc_day~reg0.CLK
+inc_hour => out_hour[0]~reg0.CLK
+inc_hour => out_hour[1]~reg0.CLK
+inc_hour => out_hour[2]~reg0.CLK
+inc_hour => out_hour[3]~reg0.CLK
+inc_hour => out_hour[4]~reg0.CLK
+inc_hour => out_hour[5]~reg0.CLK
+rst_numb_hour[0] => Equal0.IN5
+rst_numb_hour[1] => Equal0.IN4
+rst_numb_hour[2] => Equal0.IN3
+rst_numb_hour[3] => Equal0.IN2
+rst_numb_hour[4] => Equal0.IN1
+rst_numb_hour[5] => Equal0.IN0
+inc_day <= inc_day~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_hour[0] <= out_hour[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_hour[1] <= out_hour[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_hour[2] <= out_hour[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_hour[3] <= out_hour[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_hour[4] <= out_hour[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_hour[5] <= out_hour[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|day_of_mon:dom
+rst_n => ~NO_FANOUT~
+in_mon[0] => Equal0.IN5
+in_mon[0] => Equal2.IN5
+in_mon[0] => Equal3.IN5
+in_mon[0] => Equal4.IN2
+in_mon[0] => Equal5.IN1
+in_mon[0] => Equal6.IN1
+in_mon[0] => Equal7.IN2
+in_mon[0] => Equal8.IN5
+in_mon[0] => Equal9.IN5
+in_mon[0] => Equal10.IN5
+in_mon[0] => Equal11.IN30
+in_mon[1] => Equal0.IN2
+in_mon[1] => Equal2.IN4
+in_mon[1] => Equal3.IN4
+in_mon[1] => Equal4.IN1
+in_mon[1] => Equal5.IN5
+in_mon[1] => Equal6.IN0
+in_mon[1] => Equal7.IN1
+in_mon[1] => Equal8.IN1
+in_mon[1] => Equal9.IN1
+in_mon[1] => Equal10.IN4
+in_mon[1] => Equal11.IN57
+in_mon[2] => Equal0.IN1
+in_mon[2] => Equal2.IN1
+in_mon[2] => Equal3.IN3
+in_mon[2] => Equal4.IN0
+in_mon[2] => Equal5.IN0
+in_mon[2] => Equal6.IN5
+in_mon[2] => Equal7.IN5
+in_mon[2] => Equal8.IN4
+in_mon[2] => Equal9.IN0
+in_mon[2] => Equal10.IN0
+in_mon[2] => Equal11.IN29
+in_mon[3] => Equal0.IN0
+in_mon[3] => Equal2.IN0
+in_mon[3] => Equal3.IN0
+in_mon[3] => Equal4.IN5
+in_mon[3] => Equal5.IN4
+in_mon[3] => Equal6.IN4
+in_mon[3] => Equal7.IN0
+in_mon[3] => Equal8.IN0
+in_mon[3] => Equal9.IN4
+in_mon[3] => Equal10.IN3
+in_mon[3] => Equal11.IN28
+in_mon[4] => Equal0.IN4
+in_mon[4] => Equal2.IN3
+in_mon[4] => Equal3.IN2
+in_mon[4] => Equal4.IN4
+in_mon[4] => Equal5.IN3
+in_mon[4] => Equal6.IN3
+in_mon[4] => Equal7.IN4
+in_mon[4] => Equal8.IN3
+in_mon[4] => Equal9.IN3
+in_mon[4] => Equal10.IN2
+in_mon[4] => Equal11.IN27
+in_mon[5] => Equal0.IN3
+in_mon[5] => Equal2.IN2
+in_mon[5] => Equal3.IN1
+in_mon[5] => Equal4.IN3
+in_mon[5] => Equal5.IN2
+in_mon[5] => Equal6.IN2
+in_mon[5] => Equal7.IN3
+in_mon[5] => Equal8.IN2
+in_mon[5] => Equal9.IN2
+in_mon[5] => Equal10.IN1
+in_mon[5] => Equal11.IN26
+in_year[0] => Equal1.IN31
+in_year[1] => Equal1.IN30
+in_year[2] => ~NO_FANOUT~
+in_year[3] => ~NO_FANOUT~
+in_year[4] => ~NO_FANOUT~
+in_year[5] => ~NO_FANOUT~
+rst_day[0] <= rst_day[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+rst_day[1] <= rst_day[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+rst_day[2] <= rst_day[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+rst_day[3] <= <GND>
+rst_day[4] <= <GND>
+rst_day[5] <= <GND>
+
+
+|centery_clock|counter_day:cnt_day
+clk_1Hz => ~NO_FANOUT~
+rst_n => inc_mon~reg0.ACLR
+rst_n => out_day[0]~reg0.PRESET
+rst_n => out_day[1]~reg0.ACLR
+rst_n => out_day[2]~reg0.ACLR
+rst_n => out_day[3]~reg0.ACLR
+rst_n => out_day[4]~reg0.ACLR
+rst_n => out_day[5]~reg0.ACLR
+inc_day => inc_mon~reg0.CLK
+inc_day => out_day[0]~reg0.CLK
+inc_day => out_day[1]~reg0.CLK
+inc_day => out_day[2]~reg0.CLK
+inc_day => out_day[3]~reg0.CLK
+inc_day => out_day[4]~reg0.CLK
+inc_day => out_day[5]~reg0.CLK
+rst_numb_day[0] => Equal0.IN5
+rst_numb_day[1] => Equal0.IN4
+rst_numb_day[2] => Equal0.IN3
+rst_numb_day[3] => Equal0.IN2
+rst_numb_day[4] => Equal0.IN1
+rst_numb_day[5] => Equal0.IN0
+inc_mon <= inc_mon~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_day[0] <= out_day[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_day[1] <= out_day[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_day[2] <= out_day[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_day[3] <= out_day[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_day[4] <= out_day[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_day[5] <= out_day[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|counter_mon:cnt_mon
+clk_1Hz => ~NO_FANOUT~
+rst_n => inc_year~reg0.ACLR
+rst_n => out_mon[0]~reg0.PRESET
+rst_n => out_mon[1]~reg0.ACLR
+rst_n => out_mon[2]~reg0.ACLR
+rst_n => out_mon[3]~reg0.ACLR
+rst_n => out_mon[4]~reg0.ACLR
+rst_n => out_mon[5]~reg0.ACLR
+inc_mon => inc_year~reg0.CLK
+inc_mon => out_mon[0]~reg0.CLK
+inc_mon => out_mon[1]~reg0.CLK
+inc_mon => out_mon[2]~reg0.CLK
+inc_mon => out_mon[3]~reg0.CLK
+inc_mon => out_mon[4]~reg0.CLK
+inc_mon => out_mon[5]~reg0.CLK
+rst_numb_mon[0] => Equal0.IN5
+rst_numb_mon[1] => Equal0.IN4
+rst_numb_mon[2] => Equal0.IN3
+rst_numb_mon[3] => Equal0.IN2
+rst_numb_mon[4] => Equal0.IN1
+rst_numb_mon[5] => Equal0.IN0
+inc_year <= inc_year~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_mon[0] <= out_mon[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_mon[1] <= out_mon[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_mon[2] <= out_mon[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_mon[3] <= out_mon[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_mon[4] <= out_mon[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_mon[5] <= out_mon[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|counter_year:cnt_year
+clk_1Hz => ~NO_FANOUT~
+rst_n => out_year[0]~reg0.ACLR
+rst_n => out_year[1]~reg0.ACLR
+rst_n => out_year[2]~reg0.ACLR
+rst_n => out_year[3]~reg0.ACLR
+rst_n => out_year[4]~reg0.ACLR
+rst_n => out_year[5]~reg0.ACLR
+inc_year => out_year[0]~reg0.CLK
+inc_year => out_year[1]~reg0.CLK
+inc_year => out_year[2]~reg0.CLK
+inc_year => out_year[3]~reg0.CLK
+inc_year => out_year[4]~reg0.CLK
+inc_year => out_year[5]~reg0.CLK
+out_year[0] <= out_year[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_year[1] <= out_year[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_year[2] <= out_year[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_year[3] <= out_year[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_year[4] <= out_year[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_year[5] <= out_year[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|extract_bit:ex_sec_day
+numb[0] => Div0.IN9
+numb[0] => Mod0.IN9
+numb[1] => Div0.IN8
+numb[1] => Mod0.IN8
+numb[2] => Div0.IN7
+numb[2] => Mod0.IN7
+numb[3] => Div0.IN6
+numb[3] => Mod0.IN6
+numb[4] => Div0.IN5
+numb[4] => Mod0.IN5
+numb[5] => Div0.IN4
+numb[5] => Mod0.IN4
+ten_o[0] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+ten_o[1] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+ten_o[2] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+ten_o[3] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+ten_o[4] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+ten_o[5] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+unit_o[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+unit_o[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+unit_o[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+unit_o[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+unit_o[4] <= <GND>
+unit_o[5] <= <GND>
+
+
+|centery_clock|led_unit:led_sec_unit
+unit_numb[0] => Decoder0.IN5
+unit_numb[1] => Decoder0.IN4
+unit_numb[2] => Decoder0.IN3
+unit_numb[3] => Decoder0.IN2
+unit_numb[4] => Decoder0.IN1
+unit_numb[5] => Decoder0.IN0
+abcdefg[0] <= abcdefg.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[1] <= abcdefg.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|led_ten:led_sec_ten
+ten_numb[0] => Decoder0.IN5
+ten_numb[1] => Decoder0.IN4
+ten_numb[2] => Decoder0.IN3
+ten_numb[3] => Decoder0.IN2
+ten_numb[4] => Decoder0.IN1
+ten_numb[5] => Decoder0.IN0
+abcdefg[0] <= abcdefg.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[3] <= abcdefg.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|extract_bit:ex_min_mon
+numb[0] => Div0.IN9
+numb[0] => Mod0.IN9
+numb[1] => Div0.IN8
+numb[1] => Mod0.IN8
+numb[2] => Div0.IN7
+numb[2] => Mod0.IN7
+numb[3] => Div0.IN6
+numb[3] => Mod0.IN6
+numb[4] => Div0.IN5
+numb[4] => Mod0.IN5
+numb[5] => Div0.IN4
+numb[5] => Mod0.IN4
+ten_o[0] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+ten_o[1] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+ten_o[2] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+ten_o[3] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+ten_o[4] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+ten_o[5] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+unit_o[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+unit_o[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+unit_o[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+unit_o[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+unit_o[4] <= <GND>
+unit_o[5] <= <GND>
+
+
+|centery_clock|led_unit:led_min_unit
+unit_numb[0] => Decoder0.IN5
+unit_numb[1] => Decoder0.IN4
+unit_numb[2] => Decoder0.IN3
+unit_numb[3] => Decoder0.IN2
+unit_numb[4] => Decoder0.IN1
+unit_numb[5] => Decoder0.IN0
+abcdefg[0] <= abcdefg.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[1] <= abcdefg.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|led_ten:led_min_ten
+ten_numb[0] => Decoder0.IN5
+ten_numb[1] => Decoder0.IN4
+ten_numb[2] => Decoder0.IN3
+ten_numb[3] => Decoder0.IN2
+ten_numb[4] => Decoder0.IN1
+ten_numb[5] => Decoder0.IN0
+abcdefg[0] <= abcdefg.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[3] <= abcdefg.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|extract_bit:ex_hour_year
+numb[0] => Div0.IN9
+numb[0] => Mod0.IN9
+numb[1] => Div0.IN8
+numb[1] => Mod0.IN8
+numb[2] => Div0.IN7
+numb[2] => Mod0.IN7
+numb[3] => Div0.IN6
+numb[3] => Mod0.IN6
+numb[4] => Div0.IN5
+numb[4] => Mod0.IN5
+numb[5] => Div0.IN4
+numb[5] => Mod0.IN4
+ten_o[0] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+ten_o[1] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+ten_o[2] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+ten_o[3] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+ten_o[4] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+ten_o[5] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+unit_o[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+unit_o[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+unit_o[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+unit_o[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+unit_o[4] <= <GND>
+unit_o[5] <= <GND>
+
+
+|centery_clock|led_unit:led_hour_unit
+unit_numb[0] => Decoder0.IN5
+unit_numb[1] => Decoder0.IN4
+unit_numb[2] => Decoder0.IN3
+unit_numb[3] => Decoder0.IN2
+unit_numb[4] => Decoder0.IN1
+unit_numb[5] => Decoder0.IN0
+abcdefg[0] <= abcdefg.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[1] <= abcdefg.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|centery_clock|led_ten:led_hour_ten
+ten_numb[0] => Decoder0.IN5
+ten_numb[1] => Decoder0.IN4
+ten_numb[2] => Decoder0.IN3
+ten_numb[3] => Decoder0.IN2
+ten_numb[4] => Decoder0.IN1
+ten_numb[5] => Decoder0.IN0
+abcdefg[0] <= abcdefg.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[3] <= abcdefg.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+abcdefg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

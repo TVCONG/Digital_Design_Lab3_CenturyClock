@@ -1,0 +1,189 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "abcdefg_sec_unit[0]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_sec_unit[1]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_sec_unit[2]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_sec_unit[3]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_sec_unit[4]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_sec_unit[5]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_sec_unit[6]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_sec_ten[0]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_sec_ten[1]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_sec_ten[2]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_sec_ten[3]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_sec_ten[4]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_sec_ten[5]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_sec_ten[6]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_min_unit[0]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_min_unit[1]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_min_unit[2]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_min_unit[3]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_min_unit[4]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_min_unit[5]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_min_unit[6]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_min_ten[0]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_min_ten[1]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_min_ten[2]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_min_ten[3]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_min_ten[4]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_min_ten[5]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_min_ten[6]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_hour_unit[0]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_hour_unit[1]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_hour_unit[2]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_hour_unit[3]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_hour_unit[4]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_hour_unit[5]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_hour_unit[6]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_hour_ten[0]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_hour_ten[1]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_hour_ten[2]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_hour_ten[3]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_hour_ten[4]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_hour_ten[5]",
+					"strict" : false
+				},
+				{
+					"name" : "abcdefg_hour_ten[6]",
+					"strict" : false
+				},
+				{
+					"name" : "swap",
+					"strict" : false
+				},
+				{
+					"name" : "rst_n",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

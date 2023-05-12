@@ -1,0 +1,14 @@
+module centery_clock (
+	input clk,
+	input rst_n,
+	output reg [6:0] abcdefg_unit, abcdefg_ten
+);
+	wire [5:0] numb_sec;
+	wire [3:0] ten;
+	wire [3:0] unit;
+	assgin inc_sec = 1;
+	counter_sec cnt_sec(.clk_1Hz(clk), .rst_n  (rst_n), .inc_sec(inc_sec), .out_sec(numb_sec));
+	extract_bit ex(.numb(numb_sec), .ten_o(ten), .unit_o(unit));
+	led_unit lu(.unit_numb(unit), .abcdefg  (abcdefg_unit));
+	led_ten lt(.ten_numb(ten), .abcdefg(abcdefg_ten));
+endmodule

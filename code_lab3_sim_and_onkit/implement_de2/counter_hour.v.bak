@@ -1,0 +1,37 @@
+
+
+//`timescale 10ns/1ps
+module counter_hour (
+	input clk_1Hz,    // Clock
+	input rst_n,  // Asynchronous reset active low
+	//input wire inc_hour,
+	output reg inc_day,
+	output reg [5:0] out_hour
+);	
+	wire inc_min;
+	wire [5:0] out_min;
+	wire inc_hour;
+	//parameter init_val = 0;
+	parameter rst_numb_hour = 23;
+	counter_min cnt_min(.clk_1Hz(clk_1Hz), .rst_n(rst_n), .inc_min(inc_min), .inc_hour(inc_hour), .out_min(out_min));
+
+	//output_hour = init_val;
+	reg reset_hour;
+	always @(posedge inc_hour or negedge rst_n) begin
+		if(~rst_n) begin
+			out_hour <= 0;
+			inc_day <= 0;
+		end else begin
+			reset_hour <= (out_hour == rst_numb_hour) ?1'b1:1'b0;	
+			if (reset_hour) begin
+				out_hour <= 0;
+				inc_day <= 1;
+			end
+			else
+			begin 
+				out_hour <= out_hour + 1'b1;
+				inc_day <= 0;
+			end
+		end
+	end
+endmodule

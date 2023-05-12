@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri May 12 15:23:01 2023
+Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+Revision Name : centery_clock
+Top-level Entity Name : centery_clock
+Family : Cyclone IV E
+Total logic elements : 365
+    Total combinational functions : 357
+    Dedicated logic registers : 80
+Total registers : 80
+Total pins : 45
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

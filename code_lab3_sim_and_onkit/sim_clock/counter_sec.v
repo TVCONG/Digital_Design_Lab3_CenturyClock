@@ -1,0 +1,73 @@
+////Case 1: Counter
+
+/*
+`timescale 10ns/1ps
+module counter_sec (
+	input clk_1Hz,    // Clock
+	input rst_n,  // Asynchronous reset active low
+	input inc_sec,
+	output reg inc_min,
+	output reg [5:0] out_sec 
+);
+	parameter clk_freq = 32'd50000000;
+	parameter rst_numb_sec = 59;
+	reg reset_s;	
+	reg [32:0] counter;
+	always @(posedge clk_1Hz or negedge rst_n) begin
+		if(~rst_n) begin
+			out_sec <= 0;
+			counter <= 0;
+			inc_min <= 0;
+		end else begin
+			if(counter == clk_freq - 1) begin
+				counter <= 0;
+				reset_s = (out_sec==rst_numb_sec)?1:0;
+				if (reset_s) begin
+					out_sec <= 0;
+					inc_min <= 1;
+				end
+				else if (inc_sec)
+				begin 
+					out_sec <= out_sec + 1;
+					inc_min <= 0;
+				end
+			end else 
+			begin
+				counter <= counter + 1;
+			end 
+		end
+	end
+endmodule
+
+*/
+
+////////Case 2: Combine Divide by 2-5
+
+`timescale 10ns/1ps
+module counter_sec (
+	input clk_1Hz,    // Clock
+	input rst_n,  // Asynchronous reset active low
+	input inc_sec,
+	input [5:0] rst_numb_sec,
+	output reg inc_min,
+	output reg [5:0] out_sec 
+);
+	always @(posedge clk_1Hz or negedge rst_n) begin
+		if(~rst_n) begin
+			out_sec <= 0;
+			inc_min <= 0;
+		end else begin
+			
+			if (out_sec==rst_numb_sec) begin
+				out_sec <= 0;
+				inc_min <= 1;
+			end
+			else if (inc_sec)
+			begin 
+				out_sec <= out_sec + 1'b1;
+				inc_min <= 0;
+			end
+		end
+	end
+endmodule
+

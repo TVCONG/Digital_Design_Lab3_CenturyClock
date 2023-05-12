@@ -1,0 +1,26 @@
+module counter_mon  (
+	input clk_1Hz,    // Clock
+	input rst_n,  // Asynchronous reset active low
+	input inc_mon,
+	input [5:0] rst_numb_mon,
+	output reg inc_year,
+	output reg [5:0] out_mon 
+);	
+
+	always @(posedge inc_mon  or negedge rst_n) begin
+		if(~rst_n) begin
+			out_mon  <= 1;
+			inc_year <= 0;
+		end else begin
+			if (out_mon  == rst_numb_mon ) begin
+				out_mon  <= 1;
+				inc_year <= 1;
+			end
+			else
+			begin 
+				out_mon  <= out_mon  + 1'b1;
+				inc_year <= 0;
+			end
+		end
+	end
+endmodule

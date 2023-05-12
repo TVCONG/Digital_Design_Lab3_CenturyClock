@@ -1,0 +1,613 @@
+Analysis & Synthesis report for centery_clock
+Fri May 12 15:23:01 2023
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for Inferred Entity Instance: extract_bit:ex_sec_day|lpm_divide:Mod0
+ 13. Parameter Settings for Inferred Entity Instance: extract_bit:ex_min_mon|lpm_divide:Mod0
+ 14. Parameter Settings for Inferred Entity Instance: extract_bit:ex_hour_year|lpm_divide:Mod0
+ 15. Port Connectivity Checks: "counter_mon:cnt_mon"
+ 16. Port Connectivity Checks: "counter_hour:cnt_hour"
+ 17. Port Connectivity Checks: "counter_min:cnt_min"
+ 18. Port Connectivity Checks: "counter_sec:cnt_sec"
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri May 12 15:23:01 2023          ;
+; Quartus Prime Version              ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                      ; centery_clock                                  ;
+; Top-level Entity Name              ; centery_clock                                  ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; 365                                            ;
+;     Total combinational functions  ; 357                                            ;
+;     Dedicated logic registers      ; 80                                             ;
+; Total registers                    ; 80                                             ;
+; Total pins                         ; 45                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; centery_clock      ; centery_clock      ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation              ; All                ;                    ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                          ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                      ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------+---------+
+; centery_clock.v                  ; yes             ; User Verilog HDL File        ; /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/centery_clock.v            ;         ;
+; extract_bit.v                    ; yes             ; User Verilog HDL File        ; /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/extract_bit.v              ;         ;
+; led_ten.v                        ; yes             ; User Verilog HDL File        ; /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/led_ten.v                  ;         ;
+; counter_day.v                    ; yes             ; User Verilog HDL File        ; /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/counter_day.v              ;         ;
+; day_of_mon.v                     ; yes             ; User Verilog HDL File        ; /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/day_of_mon.v               ;         ;
+; convert_freq.v                   ; yes             ; Auto-Found Verilog HDL File  ; /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/convert_freq.v             ;         ;
+; div_by_5.v                       ; yes             ; Auto-Found Verilog HDL File  ; /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/div_by_5.v                 ;         ;
+; div_by_10.v                      ; yes             ; Auto-Found Verilog HDL File  ; /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/div_by_10.v                ;         ;
+; div_by_2.v                       ; yes             ; Auto-Found Verilog HDL File  ; /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/div_by_2.v                 ;         ;
+; counter_sec.v                    ; yes             ; Auto-Found Verilog HDL File  ; /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/counter_sec.v              ;         ;
+; counter_min.v                    ; yes             ; Auto-Found Verilog HDL File  ; /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/counter_min.v              ;         ;
+; counter_hour.v                   ; yes             ; Auto-Found Verilog HDL File  ; /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/counter_hour.v             ;         ;
+; counter_mon.v                    ; yes             ; Auto-Found Verilog HDL File  ; /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/counter_mon.v              ;         ;
+; counter_year.v                   ; yes             ; Auto-Found Verilog HDL File  ; /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/counter_year.v             ;         ;
+; led_unit.v                       ; yes             ; Auto-Found Verilog HDL File  ; /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/led_unit.v                 ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; /home/edabk/Quartus/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/lpm_divide.tdf         ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; /home/edabk/Quartus/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/abs_divider.inc        ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /home/edabk/Quartus/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/sign_div_unsign.inc    ;         ;
+; aglobal221.inc                   ; yes             ; Megafunction                 ; /home/edabk/Quartus/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc         ;         ;
+; db/lpm_divide_k9m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/db/lpm_divide_k9m.tdf      ;         ;
+; db/sign_div_unsign_9kh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/db/sign_div_unsign_9kh.tdf ;         ;
+; db/alt_u_div_64f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/db/alt_u_div_64f.tdf       ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/db/add_sub_7pc.tdf         ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/db/add_sub_8pc.tdf         ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimated Total logic elements              ; 365        ;
+;                                             ;            ;
+; Total combinational functions               ; 357        ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 154        ;
+;     -- 3 input functions                    ; 82         ;
+;     -- <=2 input functions                  ; 121        ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 295        ;
+;     -- arithmetic mode                      ; 62         ;
+;                                             ;            ;
+; Total registers                             ; 80         ;
+;     -- Dedicated logic registers            ; 80         ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 45         ;
+;                                             ;            ;
+; Embedded Multiplier 9-bit elements          ; 0          ;
+;                                             ;            ;
+; Maximum fan-out node                        ; swap~input ;
+; Maximum fan-out                             ; 48         ;
+; Total fan-out                               ; 1369       ;
+; Average fan-out                             ; 2.60       ;
++---------------------------------------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                 ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                     ; Entity Name         ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |centery_clock                            ; 357 (19)            ; 80 (0)                    ; 0           ; 0            ; 0       ; 0         ; 45   ; 0            ; |centery_clock                                                                                                                          ; centery_clock       ; work         ;
+;    |convert_freq:conv_freq|               ; 39 (0)              ; 39 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq                                                                                                   ; convert_freq        ; work         ;
+;       |div_by_10:block_2|                 ; 5 (0)               ; 5 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq|div_by_10:block_2                                                                                 ; div_by_10           ; work         ;
+;          |div_by_2:div5|                  ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq|div_by_10:block_2|div_by_2:div5                                                                   ; div_by_2            ; work         ;
+;          |div_by_5:div2|                  ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq|div_by_10:block_2|div_by_5:div2                                                                   ; div_by_5            ; work         ;
+;       |div_by_10:block_3|                 ; 5 (0)               ; 5 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq|div_by_10:block_3                                                                                 ; div_by_10           ; work         ;
+;          |div_by_2:div5|                  ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq|div_by_10:block_3|div_by_2:div5                                                                   ; div_by_2            ; work         ;
+;          |div_by_5:div2|                  ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq|div_by_10:block_3|div_by_5:div2                                                                   ; div_by_5            ; work         ;
+;       |div_by_10:block_4|                 ; 5 (0)               ; 5 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq|div_by_10:block_4                                                                                 ; div_by_10           ; work         ;
+;          |div_by_2:div5|                  ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq|div_by_10:block_4|div_by_2:div5                                                                   ; div_by_2            ; work         ;
+;          |div_by_5:div2|                  ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq|div_by_10:block_4|div_by_5:div2                                                                   ; div_by_5            ; work         ;
+;       |div_by_10:block_5|                 ; 5 (0)               ; 5 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq|div_by_10:block_5                                                                                 ; div_by_10           ; work         ;
+;          |div_by_2:div5|                  ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq|div_by_10:block_5|div_by_2:div5                                                                   ; div_by_2            ; work         ;
+;          |div_by_5:div2|                  ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq|div_by_10:block_5|div_by_5:div2                                                                   ; div_by_5            ; work         ;
+;       |div_by_10:block_6|                 ; 5 (0)               ; 5 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq|div_by_10:block_6                                                                                 ; div_by_10           ; work         ;
+;          |div_by_2:div5|                  ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq|div_by_10:block_6|div_by_2:div5                                                                   ; div_by_2            ; work         ;
+;          |div_by_5:div2|                  ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq|div_by_10:block_6|div_by_5:div2                                                                   ; div_by_5            ; work         ;
+;       |div_by_10:block_7|                 ; 5 (0)               ; 5 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq|div_by_10:block_7                                                                                 ; div_by_10           ; work         ;
+;          |div_by_2:div5|                  ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq|div_by_10:block_7|div_by_2:div5                                                                   ; div_by_2            ; work         ;
+;          |div_by_5:div2|                  ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq|div_by_10:block_7|div_by_5:div2                                                                   ; div_by_5            ; work         ;
+;       |div_by_10:block_8|                 ; 5 (0)               ; 5 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq|div_by_10:block_8                                                                                 ; div_by_10           ; work         ;
+;          |div_by_2:div5|                  ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq|div_by_10:block_8|div_by_2:div5                                                                   ; div_by_2            ; work         ;
+;          |div_by_5:div2|                  ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq|div_by_10:block_8|div_by_5:div2                                                                   ; div_by_5            ; work         ;
+;       |div_by_5:block_1|                  ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|convert_freq:conv_freq|div_by_5:block_1                                                                                  ; div_by_5            ; work         ;
+;    |counter_day:cnt_day|                  ; 9 (9)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|counter_day:cnt_day                                                                                                      ; counter_day         ; work         ;
+;    |counter_hour:cnt_hour|                ; 10 (10)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|counter_hour:cnt_hour                                                                                                    ; counter_hour        ; work         ;
+;    |counter_min:cnt_min|                  ; 12 (12)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|counter_min:cnt_min                                                                                                      ; counter_min         ; work         ;
+;    |counter_mon:cnt_mon|                  ; 11 (11)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|counter_mon:cnt_mon                                                                                                      ; counter_mon         ; work         ;
+;    |counter_sec:cnt_sec|                  ; 12 (12)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|counter_sec:cnt_sec                                                                                                      ; counter_sec         ; work         ;
+;    |counter_year:cnt_year|                ; 6 (6)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|counter_year:cnt_year                                                                                                    ; counter_year        ; work         ;
+;    |day_of_mon:dom|                       ; 29 (29)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|day_of_mon:dom                                                                                                           ; day_of_mon          ; work         ;
+;    |extract_bit:ex_hour_year|             ; 33 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|extract_bit:ex_hour_year                                                                                                 ; extract_bit         ; work         ;
+;       |lpm_divide:Mod0|                   ; 33 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|extract_bit:ex_hour_year|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_k9m:auto_generated|  ; 33 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|extract_bit:ex_hour_year|lpm_divide:Mod0|lpm_divide_k9m:auto_generated                                                   ; lpm_divide_k9m      ; work         ;
+;             |sign_div_unsign_9kh:divider| ; 33 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|extract_bit:ex_hour_year|lpm_divide:Mod0|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider                       ; sign_div_unsign_9kh ; work         ;
+;                |alt_u_div_64f:divider|    ; 33 (33)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|extract_bit:ex_hour_year|lpm_divide:Mod0|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_64f:divider ; alt_u_div_64f       ; work         ;
+;    |extract_bit:ex_min_mon|               ; 33 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|extract_bit:ex_min_mon                                                                                                   ; extract_bit         ; work         ;
+;       |lpm_divide:Mod0|                   ; 33 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|extract_bit:ex_min_mon|lpm_divide:Mod0                                                                                   ; lpm_divide          ; work         ;
+;          |lpm_divide_k9m:auto_generated|  ; 33 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|extract_bit:ex_min_mon|lpm_divide:Mod0|lpm_divide_k9m:auto_generated                                                     ; lpm_divide_k9m      ; work         ;
+;             |sign_div_unsign_9kh:divider| ; 33 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|extract_bit:ex_min_mon|lpm_divide:Mod0|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider                         ; sign_div_unsign_9kh ; work         ;
+;                |alt_u_div_64f:divider|    ; 33 (33)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|extract_bit:ex_min_mon|lpm_divide:Mod0|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_64f:divider   ; alt_u_div_64f       ; work         ;
+;    |extract_bit:ex_sec_day|               ; 33 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|extract_bit:ex_sec_day                                                                                                   ; extract_bit         ; work         ;
+;       |lpm_divide:Mod0|                   ; 33 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|extract_bit:ex_sec_day|lpm_divide:Mod0                                                                                   ; lpm_divide          ; work         ;
+;          |lpm_divide_k9m:auto_generated|  ; 33 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|extract_bit:ex_sec_day|lpm_divide:Mod0|lpm_divide_k9m:auto_generated                                                     ; lpm_divide_k9m      ; work         ;
+;             |sign_div_unsign_9kh:divider| ; 33 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|extract_bit:ex_sec_day|lpm_divide:Mod0|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider                         ; sign_div_unsign_9kh ; work         ;
+;                |alt_u_div_64f:divider|    ; 33 (33)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|extract_bit:ex_sec_day|lpm_divide:Mod0|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_64f:divider   ; alt_u_div_64f       ; work         ;
+;    |led_ten:led_hour_ten|                 ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|led_ten:led_hour_ten                                                                                                     ; led_ten             ; work         ;
+;    |led_ten:led_min_ten|                  ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|led_ten:led_min_ten                                                                                                      ; led_ten             ; work         ;
+;    |led_ten:led_sec_ten|                  ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|led_ten:led_sec_ten                                                                                                      ; led_ten             ; work         ;
+;    |led_unit:led_hour_unit|               ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|led_unit:led_hour_unit                                                                                                   ; led_unit            ; work         ;
+;    |led_unit:led_min_unit|                ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|led_unit:led_min_unit                                                                                                    ; led_unit            ; work         ;
+;    |led_unit:led_sec_unit|                ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |centery_clock|led_unit:led_sec_unit                                                                                                    ; led_unit            ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                     ;
++----------------------------------------------------+---------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal       ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------------+------------------------+
+; day_of_mon:dom|rst_day[0]                          ; day_of_mon:dom|rst_day[5] ; no                     ;
+; day_of_mon:dom|rst_day[1]                          ; day_of_mon:dom|rst_day[5] ; no                     ;
+; day_of_mon:dom|rst_day[2]                          ; day_of_mon:dom|rst_day[5] ; yes                    ;
+; Number of user-specified and inferred latches = 3  ;                           ;                        ;
++----------------------------------------------------+---------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 80    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 6     ;
+; Number of registers using Asynchronous Clear ; 41    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------+
+; Inverted Register Statistics                                             ;
++----------------------------------------------------------------+---------+
+; Inverted Register                                              ; Fan out ;
++----------------------------------------------------------------+---------+
+; counter_day:cnt_day|out_day[0]                                 ; 4       ;
+; counter_mon:cnt_mon|out_mon[0]                                 ; 16      ;
+; convert_freq:conv_freq|div_by_10:block_8|div_by_2:div5|clk_out ; 8       ;
+; convert_freq:conv_freq|div_by_10:block_7|div_by_2:div5|clk_out ; 5       ;
+; convert_freq:conv_freq|div_by_10:block_6|div_by_2:div5|clk_out ; 5       ;
+; convert_freq:conv_freq|div_by_10:block_5|div_by_2:div5|clk_out ; 5       ;
+; convert_freq:conv_freq|div_by_10:block_4|div_by_2:div5|clk_out ; 5       ;
+; convert_freq:conv_freq|div_by_10:block_3|div_by_2:div5|clk_out ; 5       ;
+; convert_freq:conv_freq|div_by_10:block_2|div_by_2:div5|clk_out ; 5       ;
+; Total number of inverted registers = 9                         ;         ;
++----------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; 60:1               ; 3 bits    ; 120 LEs       ; 60 LEs               ; 60 LEs                 ; No         ; |centery_clock|day_of_mon:dom|rst_day[2] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: extract_bit:ex_sec_day|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                                       ;
+; LPM_WIDTHD             ; 4              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_k9m ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: extract_bit:ex_min_mon|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                                       ;
+; LPM_WIDTHD             ; 4              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_k9m ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: extract_bit:ex_hour_year|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                            ;
++------------------------+----------------+-------------------------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                                         ;
+; LPM_WIDTHD             ; 4              ; Untyped                                         ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
+; LPM_PIPELINE           ; 0              ; Untyped                                         ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                         ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                         ;
+; CBXI_PARAMETER         ; lpm_divide_k9m ; Untyped                                         ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                         ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                  ;
++------------------------+----------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "counter_mon:cnt_mon"      ;
++--------------------+-------+----------+--------------+
+; Port               ; Type  ; Severity ; Details      ;
++--------------------+-------+----------+--------------+
+; rst_numb_mon[3..2] ; Input ; Info     ; Stuck at VCC ;
+; rst_numb_mon[5..4] ; Input ; Info     ; Stuck at GND ;
+; rst_numb_mon[1..0] ; Input ; Info     ; Stuck at GND ;
++--------------------+-------+----------+--------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "counter_hour:cnt_hour"     ;
++---------------------+-------+----------+--------------+
+; Port                ; Type  ; Severity ; Details      ;
++---------------------+-------+----------+--------------+
+; rst_numb_hour[2..0] ; Input ; Info     ; Stuck at VCC ;
+; rst_numb_hour[5]    ; Input ; Info     ; Stuck at GND ;
+; rst_numb_hour[4]    ; Input ; Info     ; Stuck at VCC ;
+; rst_numb_hour[3]    ; Input ; Info     ; Stuck at GND ;
++---------------------+-------+----------+--------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "counter_min:cnt_min"      ;
++--------------------+-------+----------+--------------+
+; Port               ; Type  ; Severity ; Details      ;
++--------------------+-------+----------+--------------+
+; rst_numb_min[5..3] ; Input ; Info     ; Stuck at VCC ;
+; rst_numb_min[1..0] ; Input ; Info     ; Stuck at VCC ;
+; rst_numb_min[2]    ; Input ; Info     ; Stuck at GND ;
++--------------------+-------+----------+--------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "counter_sec:cnt_sec"      ;
++--------------------+-------+----------+--------------+
+; Port               ; Type  ; Severity ; Details      ;
++--------------------+-------+----------+--------------+
+; inc_sec            ; Input ; Info     ; Stuck at VCC ;
+; rst_numb_sec[5..3] ; Input ; Info     ; Stuck at VCC ;
+; rst_numb_sec[1..0] ; Input ; Info     ; Stuck at VCC ;
+; rst_numb_sec[2]    ; Input ; Info     ; Stuck at GND ;
++--------------------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 45                          ;
+; cycloneiii_ff         ; 80                          ;
+;     CLR               ; 35                          ;
+;     CLR SLD           ; 6                           ;
+;     plain             ; 39                          ;
+; cycloneiii_lcell_comb ; 363                         ;
+;     arith             ; 62                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 36                          ;
+;         3 data inputs ; 25                          ;
+;     normal            ; 301                         ;
+;         0 data inputs ; 10                          ;
+;         1 data inputs ; 21                          ;
+;         2 data inputs ; 59                          ;
+;         3 data inputs ; 57                          ;
+;         4 data inputs ; 154                         ;
+;                       ;                             ;
+; Max LUT depth         ; 10.10                       ;
+; Average LUT depth     ; 5.84                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+    Info: Processing started: Fri May 12 15:22:54 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off centery_clock -c centery_clock
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file centery_clock.v
+    Info (12023): Found entity 1: centery_clock File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/centery_clock.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file extract_bit.v
+    Info (12023): Found entity 1: extract_bit File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/extract_bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file led_ten.v
+    Info (12023): Found entity 1: led_ten File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/led_ten.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file counter_day.v
+    Info (12023): Found entity 1: counter_day File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/counter_day.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file day_of_mon.v
+    Info (12023): Found entity 1: day_of_mon File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/day_of_mon.v Line: 80
+Info (12127): Elaborating entity "centery_clock" for the top level hierarchy
+Warning (12125): Using design file convert_freq.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: convert_freq File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/convert_freq.v Line: 4
+Info (12128): Elaborating entity "convert_freq" for hierarchy "convert_freq:conv_freq" File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/centery_clock.v Line: 59
+Warning (12125): Using design file div_by_5.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: div_by_5 File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/div_by_5.v Line: 4
+Info (12128): Elaborating entity "div_by_5" for hierarchy "convert_freq:conv_freq|div_by_5:block_1" File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/convert_freq.v Line: 27
+Warning (12125): Using design file div_by_10.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: div_by_10 File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/div_by_10.v Line: 3
+Info (12128): Elaborating entity "div_by_10" for hierarchy "convert_freq:conv_freq|div_by_10:block_2" File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/convert_freq.v Line: 30
+Warning (12125): Using design file div_by_2.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: div_by_2 File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/div_by_2.v Line: 5
+Info (12128): Elaborating entity "div_by_2" for hierarchy "convert_freq:conv_freq|div_by_10:block_2|div_by_2:div5" File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/div_by_10.v Line: 9
+Warning (12125): Using design file counter_sec.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: counter_sec File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/counter_sec.v Line: 42
+Info (12128): Elaborating entity "counter_sec" for hierarchy "counter_sec:cnt_sec" File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/centery_clock.v Line: 60
+Warning (12125): Using design file counter_min.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: counter_min File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/counter_min.v Line: 4
+Info (12128): Elaborating entity "counter_min" for hierarchy "counter_min:cnt_min" File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/centery_clock.v Line: 61
+Warning (12125): Using design file counter_hour.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: counter_hour File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/counter_hour.v Line: 1
+Info (12128): Elaborating entity "counter_hour" for hierarchy "counter_hour:cnt_hour" File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/centery_clock.v Line: 62
+Info (12128): Elaborating entity "day_of_mon" for hierarchy "day_of_mon:dom" File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/centery_clock.v Line: 63
+Warning (10240): Verilog HDL Always Construct warning at day_of_mon.v(115): inferring latch(es) for variable "rst_day", which holds its previous value in one or more paths through the always construct File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/day_of_mon.v Line: 115
+Warning (10240): Verilog HDL Always Construct warning at day_of_mon.v(115): inferring latch(es) for variable "j", which holds its previous value in one or more paths through the always construct File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/day_of_mon.v Line: 115
+Info (10041): Inferred latch for "rst_day[0]" at day_of_mon.v(115) File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/day_of_mon.v Line: 115
+Info (10041): Inferred latch for "rst_day[1]" at day_of_mon.v(115) File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/day_of_mon.v Line: 115
+Info (10041): Inferred latch for "rst_day[2]" at day_of_mon.v(115) File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/day_of_mon.v Line: 115
+Info (10041): Inferred latch for "rst_day[3]" at day_of_mon.v(115) File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/day_of_mon.v Line: 115
+Info (10041): Inferred latch for "rst_day[4]" at day_of_mon.v(115) File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/day_of_mon.v Line: 115
+Info (10041): Inferred latch for "rst_day[5]" at day_of_mon.v(115) File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/day_of_mon.v Line: 115
+Info (12128): Elaborating entity "counter_day" for hierarchy "counter_day:cnt_day" File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/centery_clock.v Line: 64
+Warning (12125): Using design file counter_mon.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: counter_mon File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/counter_mon.v Line: 1
+Info (12128): Elaborating entity "counter_mon" for hierarchy "counter_mon:cnt_mon" File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/centery_clock.v Line: 65
+Warning (12125): Using design file counter_year.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: counter_year File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/counter_year.v Line: 1
+Info (12128): Elaborating entity "counter_year" for hierarchy "counter_year:cnt_year" File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/centery_clock.v Line: 66
+Info (12128): Elaborating entity "extract_bit" for hierarchy "extract_bit:ex_sec_day" File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/centery_clock.v Line: 99
+Warning (12125): Using design file led_unit.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: led_unit File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/led_unit.v Line: 1
+Info (12128): Elaborating entity "led_unit" for hierarchy "led_unit:led_sec_unit" File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/centery_clock.v Line: 100
+Info (12128): Elaborating entity "led_ten" for hierarchy "led_ten:led_sec_ten" File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/centery_clock.v Line: 101
+Info (278001): Inferred 3 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "extract_bit:ex_sec_day|Mod0" File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/extract_bit.v Line: 9
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "extract_bit:ex_min_mon|Mod0" File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/extract_bit.v Line: 9
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "extract_bit:ex_hour_year|Mod0" File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/extract_bit.v Line: 9
+Info (12130): Elaborated megafunction instantiation "extract_bit:ex_sec_day|lpm_divide:Mod0" File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/extract_bit.v Line: 9
+Info (12133): Instantiated megafunction "extract_bit:ex_sec_day|lpm_divide:Mod0" with the following parameter: File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/extract_bit.v Line: 9
+    Info (12134): Parameter "LPM_WIDTHN" = "6"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_k9m.tdf
+    Info (12023): Found entity 1: lpm_divide_k9m File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/db/lpm_divide_k9m.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9kh File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/db/sign_div_unsign_9kh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_64f.tdf
+    Info (12023): Found entity 1: alt_u_div_64f File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/db/alt_u_div_64f.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/db/add_sub_7pc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/db/add_sub_8pc.tdf Line: 23
+Warning (13012): Latch day_of_mon:dom|rst_day[0] has unsafe behavior File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/day_of_mon.v Line: 115
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal counter_mon:cnt_mon|out_mon[5] File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/counter_mon.v Line: 16
+    Warning (13013): Ports ENA and PRE on the latch are fed by the same signal counter_mon:cnt_mon|out_mon[5] File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/counter_mon.v Line: 16
+Warning (13012): Latch day_of_mon:dom|rst_day[1] has unsafe behavior File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/day_of_mon.v Line: 115
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal counter_mon:cnt_mon|out_mon[5] File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/counter_mon.v Line: 16
+    Warning (13013): Ports ENA and PRE on the latch are fed by the same signal counter_mon:cnt_mon|out_mon[5] File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/counter_mon.v Line: 16
+Warning (13012): Latch day_of_mon:dom|rst_day[2] has unsafe behavior File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/day_of_mon.v Line: 115
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal counter_mon:cnt_mon|out_mon[5] File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/counter_mon.v Line: 16
+    Warning (13013): Ports ENA and PRE on the latch are fed by the same signal counter_mon:cnt_mon|out_mon[5] File: /home/edabk/CONGTV192729/TKS_T7/homework/buoi3/datamylap/implement_de2/counter_mon.v Line: 16
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 412 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 367 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
+    Info: Peak virtual memory: 504 megabytes
+    Info: Processing ended: Fri May 12 15:23:01 2023
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:21
+
+
